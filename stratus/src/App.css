@@ -1,4 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+@keyframes example {
+  from {background-color: #fb7604}
+  to {background-color: #fb770450}
+}
+@keyframes fontColor {
+  from {color: #ffffff}
+  to {color: #000000}
+}
 .topBanner{
   position: -webkit-sticky;
   position: sticky;
@@ -25,9 +33,29 @@
   left: 43vw;
   height: 10vw;
   width: 40vw;
-  
+  animation-name: fontColor;
+  animation-duration: 21s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 .largeFont{
   font-family: 'Poppins', sans-serif;
   font-size: 10vw;
+}
+
+.SideBar{
+  position: fixed;
+  left: 0%;
+  width: 27vw;
+  height: 100vh;
+  background-color: #fb7604;
+}
+.twoButtons{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: absolute;
+  left: 10vw;
+  top: 65vh;
+ 
 }

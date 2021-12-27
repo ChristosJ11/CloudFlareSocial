@@ -6,12 +6,14 @@ import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import { useState, useEffect } from 'react';
 import axios from "axios"
-const baseURL=''
-function LoginPage() {
+import {useNavigate} from "react-router-dom"
+const baseURL='http://127.0.0.1:8787/'
+function LoginPage({changeuser}) {
   const[user, changeUser]= useState('');
   const[pass, changePass] = useState('');
   const[suser, schangeUser]= useState('');
   const[spass, schangePass] = useState('');
+  const navigate= useNavigate()
   //signIn function
   const Send=(e)=>{
     e.preventDefault()
@@ -61,13 +63,15 @@ function LoginPage() {
         ). then (function (response){
         if( response.data.password== spass){
           console.log(response)
-          
+          changeuser(suser)
+          navigate("/scrollPage")
         }
         else{
           console.log(response)
           alert("Incorrect username or password")
         }
       })
+      
       schangeUser('')
       schangePass('')
   }
