@@ -6,7 +6,7 @@ import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import { useState, useEffect } from 'react';
 import axios from "axios"
-const baseURL='http://127.0.0.1:8787/'
+const baseURL=''
 function LoginPage() {
   const[user, changeUser]= useState('');
   const[pass, changePass] = useState('');
