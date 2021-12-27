@@ -6,7 +6,7 @@
   width: 100vw;
   top: 0px;
   background-color: #fb7604;
-  align-items: center;
+  
 }
 
 .loginParent{
@@ -20,7 +20,12 @@
 
 .mediumFont{
   font-family: 'Poppins', sans-serif;
-  font-size: xx-large;
+  font-size: 3vw;
+  position: absolute;
+  left: 43vw;
+  height: 10vw;
+  width: 40vw;
+  
 }
 .largeFont{
   font-family: 'Poppins', sans-serif;

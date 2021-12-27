@@ -4,7 +4,73 @@ import TextField from '@mui/material/TextField';
 import Divider from '@mui/material/Divider';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
-function loginPage() {
+import { useState, useEffect } from 'react';
+import axios from "axios"
+const baseURL='http://127.0.0.1:8787/'
+function LoginPage() {
+  const[user, changeUser]= useState('');
+  const[pass, changePass] = useState('');
+  const[suser, schangeUser]= useState('');
+  const[spass, schangePass] = useState('');
+  //signIn function
+  const Send=(e)=>{
+    e.preventDefault()
+    if( !user||!pass){
+      alert("no username or password entered")
+    }
+    const userInformation={
+      username:user,
+      password: pass,
+      userId: '',
+      posts: [],
+      followers:[],
+      profileDescription:'',
+      profileImage: user
+    }
+    //Post the user to the database if it's not already in the database
+    axios.get(`${baseURL}signedUp`,{
+      params:{
+        username: user
+      }
+    }
+      ). then (function (response){
+      if( response.data==''){
+        console.log(response)
+        axios.post(`${baseURL}signedUp`,userInformation)
+      }
+      else{
+        console.log(response)
+        alert("This user already exists, choose a new username")
+      }
+    })
+    //reset User and Pass
+    changeUser('')
+    changePass('')
+  }
+  //Sign In function
+  const signIn =(e)=>{
+      e.preventDefault()
+      if( !user||!pass){
+        alert("no username or password entered")
+      }
+      axios.get(`${baseURL}signedUp`,{
+        params:{
+          username: suser
+        }
+      }
+        ). then (function (response){
+        if( response.data.password== spass){
+          console.log(response)
+          
+        }
+        else{
+          console.log(response)
+          alert("Incorrect username or password")
+        }
+      })
+      schangeUser('')
+      schangePass('')
+  }
   return (
     <div >
         <div className='loginParent' >
@@ -29,21 +95,23 @@ function loginPage() {
     >
         <div className='largeFont'>Sign Up</div>
         <TextField
-         
+          value={user}
+          onChange={(e)=> changeUser(e.target.value)}
           id="filled-password-input"
           label="Username"
           autoComplete="current-password"
           variant="filled"
         />
          <TextField
-          
+          value={pass}
+          onChange={(e)=> changePass(e.target.value)}
           id="filled-password-input"
           label="Password"
           type="password"
           autoComplete="current-password"
           variant="filled"
         />
-         <Button variant="outlined" size="large">
+         <Button variant="outlined" size="large" onClick={Send}>
           Sign Up
         </Button>
         </Box>
@@ -63,18 +131,20 @@ function loginPage() {
       noValidate
       autoComplete="off"
     >
-         <Button variant="outlined" size="large">
+         <Button variant="outlined" size="large" onClick= {signIn}>
           Sign In
         </Button>
         <TextField
-        
+          value={suser}
+          onChange={(e)=> schangeUser(e.target.value)}
           id="filled-password-input"
           label="Username"
           autoComplete="current-password"
           variant="filled"
         />
          <TextField
-          
+          value={spass}
+          onChange={(e)=> schangePass(e.target.value)}
           id="filled-password-input"
           label="Password"
           type="password"
@@ -90,4 +160,4 @@ function loginPage() {
   );
 }
 
-export default loginPage;
+export default LoginPage;
