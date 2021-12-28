@@ -27,7 +27,7 @@ function LoginPage({changeuser}) {
       posts: [],
       followers:[],
       profileDescription:'',
-      profileImage: user
+      profileImage: null
     }
     //Post the user to the database if it's not already in the database
     axios.get(`${baseURL}signedUp`,{
