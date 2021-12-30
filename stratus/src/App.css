@@ -17,11 +17,11 @@
 .topBanner{
   position: -webkit-sticky;
   position: sticky;
-  height: 10vh;
-  width: 100vw;
+  
+  width: 99vw;
   top: 0px;
   background-color: #fbf7f5;
-  border: 1px solid black;
+ 
 }
 
 .loginParent{
@@ -34,17 +34,27 @@
 }
 .smallFont{
   font-family: 'Poppins', sans-serif;
+  font-size: 3vh;
+  font-weight: bold;
+}
+.commentUserFont{
+  font-family: 'Poppins', sans-serif;
   font-size: 2vh;
+  font-weight: bold;
+}
+.smallerFont{
+  font-family: 'Poppins', sans-serif;
+  font-size: 2vh;
+  color: #8a8a8a;
 }
 .mediumFont{
   font-family: 'Poppins', sans-serif;
   font-size: 3vw;
   position: absolute;
   left: 43vw;
-  height: 10vw;
-  width: 40vw;
+  mix-blend-mode: difference;
   animation-name: fontColor;
-  animation-duration: 21s;
+  animation-duration: 10s;
   animation-iteration-count: infinite;
   animation-direction: alternate;
 }
@@ -60,10 +70,10 @@
 .SideBar{
   position: fixed;
   display: grid;
-  grid-template-columns: 15% 70% 15%;
-  grid-template-rows: 25% 10% 35% 15% 15%; 
+  grid-template-columns: 15% 35% 35% 15%;
+  grid-template-rows: 25% 5% 5% 35% 15% 15%; 
   top:12%;
-  left: 1%;
+  left: 5%;
   width: 24vw;
   height: 75vh;
   border-radius: 5%;
@@ -73,44 +83,45 @@
     -8px -8px 18px 0 rgb(255, 255, 255);
 }
 .editButton{
-  grid-column-start: 3;
-  grid-column-end: 3;
+  grid-column-start: 4;
+  grid-column-end: 4;
   grid-row-start: 1;
   grid-row-end: 1;
 }
 .profileName{
   grid-column-start: 2;
-  grid-column-end: 2;
+  grid-column-end: 4;
   grid-row-start: 2;
   grid-row-end: 2;
 }
 .profileDescription {
   grid-column-start: 2;
-  grid-column-end: 2;
+  grid-column-end: 4;
   grid-row-start: 3;
-  grid-row-end: 3;
+  grid-row-end: 4;
 }
 .profileimgChange{
   grid-column-start: 2;
-  grid-column-end: 2;
-  grid-row-start: 4;
-  grid-row-end: 4;
+  grid-column-end: 3;
+  grid-row-start: 5;
+  grid-row-end: 5;
 }
 .twoButtons{
-  width: 22%;
-  height: 15%;
-  position: absolute;
-  left: 39%;
-  bottom:5%;
+  grid-column-start: 2;
+  grid-column-end: 2;
+  grid-row-start: 6;
+  grid-row-end: 6;
 }
 .profileImage{
-  width: 22%;
-  height: 15%;
-  position: absolute;
-  left: 39%;
-  top:5%;
+  width: 75%;
+  height: 100%;
+  left: 10% ;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
   border: 1px solid black;
-  border-radius: 100%;
+  
 }
 
 .choosePost{
@@ -131,4 +142,206 @@
   top: 40%;
   left: 65%;
  
+}
+.postPicGrid{
+  display: grid;
+  padding-left:2vw;
+  height: 80vh;
+  width: 60%;
+  grid-template-columns: 35% 30% 35%;
+  grid-template-rows: 7% 2% 8% 2% 60% 20% 5%; 
+}
+.gridTitle{
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 1;
+}
+.gridUploadImg{
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 3;
+  grid-row-end: 3;
+}
+
+.gridImg{
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 5;
+  grid-row-end: 5;
+}
+.postImage{
+  width: 100%;
+  height: 100%;
+  border: 2px solid black
+}
+.gridComment{
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 6;
+  grid-row-end: 6;
+}
+.gridPost{
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 7;
+  grid-row-end: 7;
+}
+
+.refreshButton{
+  position: fixed;
+  right: 5%;
+}
+.postScrollBody{
+  position: fixed;
+  overflow: scroll;
+  width: 70vw;
+  height: 100vh;
+  top:8%;
+  right: 1%;
+}
+.postBody{
+  margin-top: 5%;
+  margin-left: 5%;
+  display: grid;
+  grid-template-columns: 5% 45% 45% 5%;
+  grid-template-rows: 3vh 3vh 10% 10% 10% 10% 10% 10% 10% 10% 10%; 
+  width: 60vw;
+  height: 70vh;
+  border-radius: 3vw;
+  border-color: #000000;
+  background:  #e6e6e6;
+      box-shadow: 6px 6px 14px 0 rgba(0, 0, 0, 0.2),
+    -8px -8px 18px 0 rgb(255, 255, 255);
+}
+.commentBody{
+  grid-column-start: 3;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 12;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 95%;
+  border-radius: 3vw;
+  border-color: #000000;
+  background:  #e6e6e6;
+      box-shadow: 6px 6px 14px 0 rgba(0, 0, 0, 0.2),
+    -8px -8px 18px 0 rgb(255, 255, 255);
+}
+.toComment{
+  display: grid;
+  grid-template-columns: 5% 80% 15%;
+  grid-template-rows: 33% 33% 33%;
+  width: 100%;
+  height: 17%;
+  border-radius: 3vw;
+  border-color: #000000;
+  background:  #e6e6e6;
+      box-shadow: 6px 6px 14px 0 rgba(0, 0, 0, 0.2),
+    -8px -8px 18px 0 rgb(255, 255, 255);
+}
+.enterComm{
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+.commentButton{
+  grid-column-start: 3;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+.actualComment{
+  display: grid;
+  grid-template-columns: 5% 80% 15%;
+  grid-template-rows: 2vh 65%;
+ width: 90%;
+ height: 15%;
+ margin-left: 10%;
+ overflow: scroll;
+}
+.actualComment::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.actualComment {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+.commentFlow{
+  width: 100%;
+  height: 83%;
+  overflow: scroll;
+}
+.commentFlow::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.commentFlow {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+.commentUserName{
+  grid-column-start: 2;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 1;
+}
+.commentText{
+  grid-column-start: 2;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+.User{
+  grid-column-start: 2;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 1;
+}
+.Title{
+  grid-column-start: 2;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 2;
+}
+.txtBox{
+  grid-column-start: 2;
+  grid-column-end: 2;
+  grid-row-start: 5;
+  grid-row-end: 9;
+  overflow: scroll;
+}
+.txtBox::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.txtBox {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+.postImg{
+  grid-column-start: 2;
+  grid-column-end: 2;
+  grid-row-start: 3;
+  grid-row-end: 9;
+  width: 75%;
+  height:100%;
+}
+.like{
+  grid-column-start: 2;
+  grid-column-end: 2;
+  grid-row-start: 9;
+  grid-row-end: 10;
+}
+.caption{
+  grid-column-start: 2;
+  grid-column-end: 2;
+  grid-row-start: 10;
+  grid-row-end: 11;
 }

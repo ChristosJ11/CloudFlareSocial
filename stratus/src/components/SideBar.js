@@ -6,12 +6,12 @@ import TextField from '@mui/material/TextField';
 import IconButton from '@mui/material/IconButton';
 import EditIcon from '@mui/icons-material/Edit';
 
-
+const baseURL='http://127.0.0.1:8787/'
 
 function SideBar({user, timeToPost}) {
-    const baseURL='http://127.0.0.1:8787/'
+   
     const[file, changeFile]= useState(null)
-    const[sendFile, changeSendFile]= useState(true)
+    
     const[sfile, schangeFile]= useState(null)
     const[imgSrc, changeImg]= useState(null)
     const[edit, changeEdit]= useState(false)
@@ -42,6 +42,7 @@ function SideBar({user, timeToPost}) {
     useEffect(()=>{
      updatePage()
     },[])
+
     useEffect(()=>{
         changeImg(sfile)
       },[sfile])
@@ -63,18 +64,11 @@ function SideBar({user, timeToPost}) {
     }
   const fileSelectedHandler = (e) => {
       const reader= new FileReader()
-      console.log(e.target.files.length)
-      if( e.target.files.length>0){
-          changeSendFile(true)
-      }else{
-          changeSendFile(false)
-      }
               reader.readAsDataURL(e.target.files[0])
               reader.onloadend=()=>{
                   changeFile(reader.result)
-                  console.log(reader.result)
+                  
               }
-     
   }
 
   
@@ -106,7 +100,7 @@ function SideBar({user, timeToPost}) {
             
             <div className="twoButtons">
                
-            <IconButton  aria-label="Add Post" >
+            <IconButton  aria-label="Add Post"  sx={{position:"absolute", left:"40%"}}>
                 <AddBoxIcon onClick={activateSlideOver} sx={{color:"black", fontSize:"5vw"}}/>
             </IconButton>
              

@@ -11,7 +11,7 @@ function App() {
     changeUsername(tempUser)
   }
   return (
-    <div className="App">
+    <div className="App" style={{overflow:'hidden'}}>
       <div className='topBanner'>
         <div className='mediumFont'>STRATUS</div>
       </div>
