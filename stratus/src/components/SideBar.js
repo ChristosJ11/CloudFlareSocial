@@ -6,7 +6,7 @@ import TextField from '@mui/material/TextField';
 import IconButton from '@mui/material/IconButton';
 import EditIcon from '@mui/icons-material/Edit';
 
-const baseURL='http://127.0.0.1:8787/'
+const baseURL='https://myapp.christosjoseph111643.workers.dev/'
 
 function SideBar({user, timeToPost}) {
    

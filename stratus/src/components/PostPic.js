@@ -3,7 +3,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import axios from "axios"
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-const baseURL='http://127.0.0.1:8787/'
+const baseURL='https://myapp.christosjoseph111643.workers.dev/'
 function PostPic({user, closePane}) {
     const[title, changeTitle]= useState('')
     const[file, changeFile]= useState(null)

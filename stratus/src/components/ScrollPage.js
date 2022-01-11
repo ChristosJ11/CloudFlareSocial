@@ -13,7 +13,7 @@ import PhotoIcon from '@mui/icons-material/Photo';
 import TextSnippetIcon from '@mui/icons-material/TextSnippet';
 import IconButton from '@mui/material/IconButton';
 import RefreshIcon from '@mui/icons-material/Refresh';
-const baseURL='http://127.0.0.1:8787/'
+const baseURL='https://myapp.christosjoseph111643.workers.dev/'
 function ScrollPage() {
     const[pane, changePane]= useState(false)
     const[postType, changePostType]=useState('')
@@ -24,9 +24,9 @@ function ScrollPage() {
         changePostType('')
     }
     const refreshPosts= ()=>{
-      axios.get(`${baseURL}posts`).then(function (response){
-        changeAllData(response.data)
-        console.log(allData)
+      axios.get(`${baseURL}posts`).then(async function (response){
+         changeAllData(response.data)
+        
       })
     }
     useEffect(()=>{
@@ -45,8 +45,8 @@ function ScrollPage() {
                <RefreshIcon  sx={{color:"grey", fontSize:"2vw"}}/>
              </IconButton>
           </div>
-        {allData?allData.map(data=><Post user={data.username} title={data.title} img={data.image} type={data.type} caption={data.caption}
-            comments={data.comments} numLikes={data.numLikes} whoLiked={data.likedUsers}/>): <div></div>}
+        {allData?allData.sort( (a, b) => a.numLikes > b.numLikes ? -1 : 1).filter(post=> post.title!=null).map(data=><Post user={username }postuser={data.username} title={data.title} img={data.image} type={data.type} caption={data.caption}
+            comments={data.comments} numLikes={data.numLikes} whoLiked={data.likedUsers} />): <div></div>}
         </div>
 
 
