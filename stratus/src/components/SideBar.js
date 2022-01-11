@@ -36,7 +36,10 @@ function SideBar({user, timeToPost}) {
             }
           }).then(function(response){
               schangeFile(response.data.profileImage)
-              changeDescr(response.data.profileDescription)
+              if(response.data.profileDescription != ''){
+                changeDescr(response.data.profileDescription)
+              }
+              
         })
     }
     useEffect(()=>{

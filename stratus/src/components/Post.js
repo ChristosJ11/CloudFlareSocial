@@ -70,9 +70,9 @@ function Post({user, postuser, title, img, caption, comments, numLikes, whoLiked
             onChange={(e)=>changeMyComment(e.target.value)}  inputProps={{style: {fontSize:15, lineHeight:1.35 }}}
             sx={{width:'100%', height:'100%'}} maxRows='1' minRows='1'/> 
                </div>
-               <div className='commentButton'>
-               <IconButton  aria-label="Like" onClick={like} >
-                   <SendIcon   sx={{color:"blue", fontSize:"2vw"}} onClick={sendComment}/>
+               <div className='commentButton' >
+               <IconButton  aria-label="Comment" onClick={sendComment} >
+                   <SendIcon   sx={{color:"blue", fontSize:"2vw"}} />
                </IconButton>
                </div>
                </div>
